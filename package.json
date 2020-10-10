@@ -1,0 +1,28 @@
+{
+  "name": "token-exchange-contract",
+  "version": "0.1.0",
+  "description": "Ethereum based smart contracts to swap tokens",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satyamakgec/token-exchange-contract.git"
+  },
+  "keywords": [
+    "Smart",
+    "Contract",
+    "ERC20",
+    "Swap"
+  ],
+  "author": "Satyam Agrawal <satyam0499@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/satyamakgec/token-exchange-contract/issues"
+  },
+  "homepage": "https://github.com/satyamakgec/token-exchange-contract#readme"
+}
