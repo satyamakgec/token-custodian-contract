@@ -26,10 +26,11 @@
   },
   "homepage": "https://github.com/satyamakgec/token-custody-contract#readme",
   "dependencies": {
-    "openzeppelin-solidity": "^3.2.0",
     "truffle": "^5.1.48"
   },
   "devDependencies": {
+    "@openzeppelin/contracts-ethereum-package": "^3.0.0",
+    "@openzeppelin/truffle-upgrades": "^1.1.1",
     "truffle-flattener": "^1.5.0"
   }
 }

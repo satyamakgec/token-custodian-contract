@@ -1,29 +1,15 @@
-pragma solidity 0.7.0;
+pragma solidity 0.6.0;
 
-import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
-import "openzeppelin-solidity/contracts/access/Ownable.sol";
-import "openzeppelin-solidity/contracts/math/SafeMath.sol";
-import "openzeppelin-solidity/contracts/cryptography/ECDSA.sol";
+import "@openzeppelin/contracts-ethereum-exchange/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts-ethereum-exchange/contracts/math/SafeMath.sol";
+import "@openzeppelin/contracts-ethereum-exchange/contracts/cryptography/ECDSA.sol";]
+import "./proxy/ProxyAdmin.sol";
+import "./CustodianStorage.sol";
 
-contract Custodian is Ownable { 
+contract Custodian is ProxyAdmin, CustodianStorage { 
 
     using SafeMath for uint256;
     using ECDSA for bytes32;
-    
-    /// Mapping that hold the balance of holders on the basis of the give token address.
-    /// token owner => token holder => balance.
-    mapping (address => mapping(address => uint256)) public erc20CustodyBalanceOf;
-    
-    /// Mapping to hold the eth amount for the given address.
-    /// ETH holder address (contract address or external account) => amount of ETH.
-    mapping (address => uint256) public ethCustodyBalanceOf;
-    
-    /// Mapping to hold the address of allowed ERC20 tokens by the `this` contract.
-    /// ERC20 token address => whether it is allowed or not.
-    mapping (address => bool) public allowedToken;
-
-    /// Keeping track of contract nonce to avoid replay attacks for the signed data.
-    mapping (uint256 => bool) public signerNonce; 
     
     /// Emitted when new custody token added. 
     event NewCustodyTokenAdded(address indexed _tokenAddress);
