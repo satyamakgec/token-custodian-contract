@@ -2,6 +2,9 @@ pragma solidity 0.6.0;
 
 contract CustodianStorage {
 
+    // Bool to switch on or off the initialization.
+    bool public initialized
+
     /// Mapping that hold the balance of holders on the basis of the give token address.
     /// token owner => token holder => balance.
     mapping (address => mapping(address => uint256)) public erc20CustodyBalanceOf;
@@ -16,5 +19,5 @@ contract CustodianStorage {
 
     /// Keeping track of contract nonce to avoid replay attacks for the signed data.
     mapping (uint256 => bool) public signerNonce; 
-    
+
 }

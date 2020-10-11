@@ -21,9 +21,15 @@ contract Custodian is ProxyAdmin, CustodianStorage {
     event ETHCustodyIncreased(address indexed _tokenHolder, uint256 _value);
     /// Emitted when the custody of the ETH released.
     event ETHCustodyReleased(address indexed _receiver, uint256 _value);
-    
-    constructor() {
-         // Constructor logic will be added once requirements are more specific.
+
+    constructor () public  {
+        initialized = true;
+    }
+
+    function initialize() public {
+        require(!initialized, "Already initialized");
+        initialized = true;
+        // Initialize logic will be added once requirements are more specific.
     }
     
     /// New token added. Only be called by the contract owner.
