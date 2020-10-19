@@ -1,9 +1,9 @@
-pragma solidity 0.6.0;
+pragma solidity 0.6.2;
 
 contract CustodianStorage {
 
     // Bool to switch on or off the initialization.
-    bool public initialized
+    bool public initialized;
 
     /// Mapping that hold the balance of holders on the basis of the give token address.
     /// token owner => token holder => balance.

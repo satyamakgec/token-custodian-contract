@@ -1,8 +1,8 @@
-pragma solidity 0.6.0;
+pragma solidity 0.6.2;
 
-import "@openzeppelin/contracts-ethereum-exchange/contracts/token/ERC20/IERC20.sol";
-import "@openzeppelin/contracts-ethereum-exchange/contracts/math/SafeMath.sol";
-import "@openzeppelin/contracts-ethereum-exchange/contracts/cryptography/ECDSA.sol";]
+import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
+import "openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "openzeppelin-solidity/contracts/cryptography/ECDSA.sol";
 import "./proxy/ProxyAdmin.sol";
 import "./CustodianStorage.sol";
 
@@ -29,7 +29,6 @@ contract Custodian is ProxyAdmin, CustodianStorage {
     function initialize() public {
         require(!initialized, "Already initialized");
         initialized = true;
-        // Initialize logic will be added once requirements are more specific.
     }
     
     /// New token added. Only be called by the contract owner.

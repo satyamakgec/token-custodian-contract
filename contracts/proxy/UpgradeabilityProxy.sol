@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.0;
+pragma solidity 0.6.2;
 
 import "./Proxy.sol";
-import "@openzeppelin/contracts-ethereum-exchange/contracts/utils/Address.sol";
+import "openzeppelin-solidity/contracts/utils/Address.sol";
 
 /**
  * @title UpgradeabilityProxy

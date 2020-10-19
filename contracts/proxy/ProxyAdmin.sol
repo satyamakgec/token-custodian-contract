@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.6.0;
+pragma solidity 0.6.2;
 
-import "@openzeppelin/contracts-ethereum-exchange/contracts/access/Ownable.sol";
+import "openzeppelin-solidity/contracts/access/Ownable.sol";
 import "./AdminUpgradeabilityProxy.sol";
 
 /**

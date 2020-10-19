@@ -14,10 +14,5 @@ yarn install
 
 ## Compile
 ```
-npm run compile
-```
-
-## Test
-```
-npm run test
+truffle compile
 ```
