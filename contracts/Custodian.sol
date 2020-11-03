@@ -47,7 +47,7 @@ contract Custodian is ProxyAdmin, CustodianStorage {
     /// @param _value Amount of token `msg.sender` wants to provide the custody to the contract.
     function takeERC20Custody(address _tokenAddress, uint256 _value) public {
         _isTokenAndValueValid(_tokenAddress, _value);
-        require(IERC20(_tokenAddress).balanceOf(msg.sender) >= _value, "Insuufficient balance");
+        require(IERC20(_tokenAddress).balanceOf(msg.sender) >= _value, "Insufficient balance");
         require(IERC20(_tokenAddress).transferFrom(msg.sender, address(this), _value), "TransferFrom failed");
         // Update the storage.
         erc20CustodyBalanceOf[_tokenAddress][msg.sender] = erc20CustodyBalanceOf[_tokenAddress][msg.sender].add(_value);

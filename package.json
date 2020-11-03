@@ -7,7 +7,14 @@
     "test": "test"
   },
   "scripts": {
-    "test": "npm run test"
+    "test": "truffle test",
+    "compile": "truffle compile",
+    "migrate:local": "truffle migrate",
+    "migrate:kovan": "truffle migrate --network=kovan --reset",
+    "migrate:mainnet": "truffle migrate --network=mainnet --reset",
+    "flatten-proxy": "truffle-flattener contracts/CustodianProxy.sol >> CustodianProxy.sol",
+    "flatten-logic": "truffle-flattener contracts/Custodian.sol >> Custodian.sol",
+    "ganache-cli": "node_modules/.bin/ganache-cli -i 15 --gasLimit 10000000"
   },
   "repository": {
     "type": "git",
@@ -26,9 +33,14 @@
   },
   "homepage": "https://github.com/satyamakgec/token-custody-contract#readme",
   "devDependencies": {
+    "ganache-cli": "^6.12.1",
     "truffle-flattener": "^1.5.0"
   },
   "dependencies": {
-    "openzeppelin-solidity": "^3.2.0"
+    "dotenv": "^8.2.0",
+    "openzeppelin-solidity": "^3.2.0",
+    "truffle": "^5.1.51",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "web3-provider-engine": "^16.0.1"
   }
 }
